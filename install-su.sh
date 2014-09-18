@@ -23,11 +23,23 @@ apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
 echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | tee /etc/apt/sources.list.d/mongodb.list
 
 apt-get update
+
+echo 'install mongodb .......'
+
 apt-get install mongodb-org nginx
 
 echo 'check nginx if the server is up and running'
 
 ip addr show eth0 | grep inet | awk '{ print $2; }' | sed 's/\/.*$//'
+
+apt-add-repository ppa:chris-lea/redis-server
+
+apt-get update
+
+echo 'install redis .......'
+
+apt-get install redis-server
+
 
 echo 'to continue the installation run install-nosu.sh'
 echo 'use: ./install-nosu.sh'
