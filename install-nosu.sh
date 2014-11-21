@@ -22,9 +22,9 @@ npm install grunt-cli -g
 
 source ~/.rvm/scripts/rvm
 
-gem install scout_realtime
-gem install bson_ext
-gem install genghisapp
+gem install scout_realtime –no-ri –no-rdoc
+gem install bson_ext –no-ri –no-rdoc
+gem install genghisapp –no-ri –no-rdoc
 
 rm -rf ~/tmp
 
