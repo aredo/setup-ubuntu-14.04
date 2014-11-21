@@ -9,9 +9,9 @@ echo 'source ~/.nvm/nvm.sh' >> ~/.profile
 echo 'source ~/.nvm/nvm.sh' >> ~/.zshrc
 
 # install node
-nvm install 0.10.26
-nvm use 0.10.26
-nvm alias default 0.10.26
+nvm install v0.10.33
+nvm use v0.10.33
+nvm alias default 0.10.33
 
 # install other useful tools
 npm install pm2 -g

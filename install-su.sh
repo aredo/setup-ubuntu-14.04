@@ -26,7 +26,13 @@ apt-get update
 
 echo 'install mongodb .......'
 
-apt-get install mongodb-org nginx
+apt-get install mongodb-org
+
+add-apt-repository ppa:nginx/stable
+
+apt-get update
+
+apt-get install nginx
 
 echo 'check nginx if the server is up and running'
 
