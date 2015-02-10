@@ -4,7 +4,7 @@ apt-get update
 apt-get -y dist-upgrade
 
 # install useful software
-apt-get install -y curl g++ git-core htop imagemagick iptables-persistent libcurl3 libcurl3-dev make pure-ftpd python-software-properties ssh libfontconfig
+apt-get install -y build-essential openssl libssl-dev pkg-config curl g++ git git-core htop imagemagick iptables-persistent libcurl3 libcurl3-dev make pure-ftpd python-software-properties software-properties-common ssh libfontconfig gettext unzip
 
 # configure ip tables for port redirect from 3000 to 80
 iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 80 -j REDIRECT --to-port 3000
@@ -27,6 +27,16 @@ apt-get update
 echo 'install mongodb .......'
 
 apt-get install mongodb-org
+
+export LC_ALL=C
+
+echo 'LC_ALL=en_US.UTF-8' >> /etc/environment
+echo 'LANG=en_US.UTF-8' >> /etc/environment
+
+locale-gen en_US
+locale-gen en_US.UTF-8
+
+ps -ef | grep mongo
 
 add-apt-repository ppa:nginx/stable
 

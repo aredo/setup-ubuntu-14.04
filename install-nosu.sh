@@ -9,18 +9,21 @@ echo 'source ~/.nvm/nvm.sh' >> ~/.profile
 echo 'source ~/.nvm/nvm.sh' >> ~/.zshrc
 
 # install node
-nvm install v0.10.33
-nvm use v0.10.33
-nvm alias default 0.10.33
+nvm install v0.10.36
+nvm use v0.10.36
+nvm alias default 0.10.36
 
 # install other useful tools
-npm install pm2 -g
-npm install nodemon -g
-npm install grunt-cli -g
+npm install -g nodemon pm2 grunt-cli redis-commander
 
-\curl -sSL https://get.rvm.io | bash -s stable --rails
+\curl -sSL https://get.rvm.io | bash -s stable
 
 source ~/.rvm/scripts/rvm
+
+rvm requirements
+rvm install ruby
+rvm use ruby --default
+rvm rubygems current
 
 gem install scout_realtime –no-ri –no-rdoc
 gem install bson_ext –no-ri –no-rdoc
